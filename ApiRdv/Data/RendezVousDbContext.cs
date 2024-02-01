@@ -12,7 +12,12 @@ namespace ApiRdv.Data
             public RendezVousDbContext(DbContextOptions<RendezVousDbContext> options) : base(options)
             {
             
+            }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
+       
     }
 }
 
