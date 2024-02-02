@@ -25,10 +25,10 @@ namespace ApiRdv
             services.AddScoped<RendezVousRepository>();
             services.AddScoped<RendezVousService>();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MicroserviceApiRdv", Version = "v1" });
-            });
+            services.AddSwaggerGen();// c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MicroserviceApiRdv", Version = "v1" });
+            //});
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -37,10 +37,11 @@ namespace ApiRdv
                 app.UseDeveloperExceptionPage();
             }
             app.UseRouting();
-            app.UseSwaggerUI(c =>
+            app.UseSwagger();
+            app.UseSwaggerUI();/*(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "MicroserviceApiRdv V1");
-            });
+            });*/
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

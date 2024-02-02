@@ -27,7 +27,7 @@ namespace ApiGateway
             {
                 app.UseDeveloperExceptionPage();   
             }
-            app.UseRoutin
+            app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
